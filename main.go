@@ -4,13 +4,17 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"strings"
+	"strconv"
 )
 
 func main() {
-	var s string
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
-	s = scanner.Text()
-	fmt.Println(strings.ToUpper(s))
+	name := scanner.Text()
+	var age int
+	scanner.Scan()
+	ageStr := scanner.Text()
+	age, _ = strconv.Atoi(ageStr)
+	fmt.Printf("Hi, %s! You are %d years old.\n", name, age)
+
 }
