@@ -1,20 +1,21 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
-	"strconv"
 )
 
 func main() {
-	scanner := bufio.NewScanner(os.Stdin)
-	scanner.Scan()
-	name := scanner.Text()
-	var age int
-	scanner.Scan()
-	ageStr := scanner.Text()
-	age, _ = strconv.Atoi(ageStr)
-	fmt.Printf("Hi, %s! You are %d years old.\n", name, age)
+	var n int
+	fmt.Scan(&n)
 
+	switch {
+	case n%3 == 0 && n%5 == 0:
+		fmt.Println("FizzBuzz")
+	case n%3 == 0:
+		fmt.Println("Fizz")
+	case n%5 == 0:
+		fmt.Println("Buzz")
+	default:
+		fmt.Println(n)
+	}
 }
