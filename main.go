@@ -2,15 +2,18 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
 func main() {
-	var input int
-	fmt.Scan(&input)
+	var line string
+	fmt.Scan(&line)
 
-	result := square(input)
-	fmt.Println(result)
-}
-func square(n int) int {
-	return n * n
+	n, err := strconv.Atoi(line)
+	if err != nil {
+		fmt.Println("bad")
+	} else {
+		fmt.Printf("ok %d\n", n)
+	}
+
 }
