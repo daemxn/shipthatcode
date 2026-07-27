@@ -2,18 +2,23 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 )
 
 func main() {
-	var line string
-	fmt.Scan(&line)
-
-	n, err := strconv.Atoi(line)
-	if err != nil {
-		fmt.Println("bad")
-	} else {
-		fmt.Printf("ok %d\n", n)
+	var nums []int
+	for i := 0; i < 5; i++ {
+		var temp int
+		fmt.Scan(&temp)
+		nums = append(nums, temp)
 	}
+
+	max := nums[0]
+	for _, v := range nums {
+		if v > max {
+			max = v
+		}
+	}
+
+	fmt.Println(max)
 
 }
