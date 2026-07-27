@@ -6,9 +6,12 @@ import (
 
 func main() {
 	var nums []int
-	for i := 0; i < 5; i++ {
+	for {
 		var temp int
-		fmt.Scan(&temp)
+		_, err := fmt.Scan(&temp)
+		if err != nil {
+			break
+		}
 		nums = append(nums, temp)
 	}
 
